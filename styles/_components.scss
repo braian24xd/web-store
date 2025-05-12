@@ -16,6 +16,49 @@
     @include button ($borderColor, $secondaryFontColor, none);
 }
 
+.sidebar {
+    padding: 20px;
+    width: 350px;
+    height: 100vh;
+    background: $secondaryBg;
+    box-shadow: 0 1px 3px $secondaryFontColor;
+    position: fixed;
+    top: 0;
+    left: -800px;
+    z-index: 1;
+    transition: all 300ms ease;
+
+    @include smallPhones {
+        width: 100vw;
+    }
+
+    &__header {
+        margin: 10px 0;
+        @include flexBox;
+
+        &--logo {
+            height: 30px;
+        }
+
+        .img-btn {
+            @include imgButton(40px, 40px);
+            
+        }
+    }
+
+    &__body {
+
+        margin: 30px 0;
+
+        nav {
+            @include flexBox($direction: column, $alignItems: flex-start, $justifyContent: flex-start);
+        }
+    }
+
+    &.open {
+        left: 0;
+    }
+}
 
 .banner {
     padding: 20px;

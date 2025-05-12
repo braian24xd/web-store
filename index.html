@@ -10,6 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
+    <script src="./js/main.js" defer></script>
     <title>ShopMate by Brayan Almora</title>
 </head>
 
@@ -17,7 +18,7 @@
     <header>
         <section class="header">
             <section class="header__nav">
-                <button class="img-btn">
+                <button class="img-btn" id="sidebar-toggle">
                     <img src="./img/icons/menu.png" alt="">
                 </button>
                 <img src="./img/logo.png" alt="ShopMate logo">
@@ -37,6 +38,23 @@
             </section>
         </section>
     </header>
+    <aside class="sidebar" id="sidebar">
+        <section class="sidebar__header">
+            <img class="sidebar__header--logo" src="./img/logo.png" alt="">
+            <button class="img-btn" id="sidebar-close">
+                <img src="./img/icons/close.png" alt="">
+            </button>
+        </section>
+        <hr>
+        <section class="sidebar__body">
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Productos</a>
+                <a href="#">Conócenos</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </section>
+    </aside>
     <main>
         <section class="banner">
             <div class="banner__content">

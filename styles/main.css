@@ -294,6 +294,62 @@ footer .footer__copy--social img {
   transition: all 0.2s ease;
 }
 
+.sidebar {
+  padding: 20px;
+  width: 350px;
+  height: 100vh;
+  background: #F2F4F6;
+  box-shadow: 0 1px 3px #444;
+  position: fixed;
+  top: 0;
+  left: -800px;
+  z-index: 1;
+  transition: all 300ms ease;
+}
+@media (max-width: 440px) {
+  .sidebar {
+    width: 100vw;
+  }
+}
+.sidebar__header {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar__header--logo {
+  height: 30px;
+}
+.sidebar__header .img-btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #E5E7EB;
+  border-radius: 20%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.sidebar__header .img-btn img {
+  width: 55%;
+}
+.sidebar__body {
+  margin: 30px 0;
+}
+.sidebar__body nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.sidebar.open {
+  left: 0;
+}
+
 .banner {
   padding: 20px;
   background: #F2F4F6;
