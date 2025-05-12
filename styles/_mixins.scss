@@ -62,3 +62,9 @@
         @content;
     }
 }
+
+@mixin smallPhones {
+    @media (max-width: 440px) {
+        @content
+    }
+}
