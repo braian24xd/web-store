@@ -1,0 +1,48 @@
+$primaryBg: #FFF;
+$secondaryBg: #F2F4F6;
+$primaryFontColor: #111;
+$secondaryFontColor: #444;
+$emphasis: #005DC0;
+$emphasisLight: #3B82F6;
+$bgAlternate: #F1F3F6;
+$borderColor: #E5E7EB;
+$success: #10B981;
+$warning: #F59E0B;
+$error: #EF4444;
+
+$fontFamily: "Inter", Helvetica, sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: $fontFamily;
+}
+
+h1 {
+    @include fontConfig(64, 600, $primaryFontColor);
+    @include tablets {
+        @include fontConfig(48, 600, $primaryFontColor);
+    }
+    @include phones {
+        @include fontConfig(32, 600, $primaryFontColor);
+    }
+}
+
+h2 {
+    @include fontConfig(32, 600, $primaryFontColor);
+}
+
+h3 {
+    @include fontConfig(22, 500, $primaryFontColor);
+}
+
+a {
+    @include fontConfig(16, 400, $primaryFontColor);
+    text-decoration: none;
+}
+
+hr {
+    border: 1px solid $secondaryBg;
+}

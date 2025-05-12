@@ -1,0 +1,64 @@
+@mixin fontConfig($size, $weight, $color) {
+    font-size: convertPx($size);
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin button ($bgColor, $fontColor, $border) {
+    padding: 10px 20px;
+    background: $bgColor;
+    color: $fontColor;
+    font-size: convertPx(17);
+    font-weight: 500;
+    border: $border;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+@mixin imgButton ($width, $height) {
+    width: $width;
+    height: $height;
+    background: transparent;
+    border: 1px solid $borderColor;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    img {
+        width: 55%;
+    }
+}
+
+@mixin flexBox ($direction: row, $wrap: nowrap, $gap: 20px, $justifyContent: space-between, $alignItems: center) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin tablets {
+    @media (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin mediumTablets {
+    @media (max-width: 920px) {
+        @content;
+    }
+}
+
+@mixin smallTablets {
+    @media (max-width: 805px) {
+        @content;
+    }
+}
+
+@mixin phones {
+    @media (max-width: 590px) {
+        @content;
+    }
+}

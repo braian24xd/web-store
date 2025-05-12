@@ -1,0 +1,134 @@
+header {
+    margin-bottom: 7px;
+    box-shadow: 0px 1px 10px #999;
+
+    .header {
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 1264px;
+        @include flexBox;
+
+        &__nav {
+            @include flexBox($gap: 40px);
+
+            @include smallTablets {
+                @include flexBox($gap: 10px);
+            }
+
+            .img-btn {
+                display: none;
+                @include imgButton(40px, 40px);
+                @include mediumTablets {
+                    display: block;
+                }
+            
+                &:hover {
+                    background: $bgAlternate;
+                }
+            }
+
+            img {
+                width: 130px;
+            }
+
+            nav {
+                display: flex;
+                gap: 30px;
+
+                @include mediumTablets {
+                    display: none;
+                }
+            }
+        }
+
+        &__buttons {
+            @include flexBox($gap: 10px);
+            .img-btn {
+                @include imgButton(45px, 45px);
+            
+                &:hover {
+                    background: $bgAlternate;
+                }
+            }
+
+            button:first-child,
+            button:nth-child(2) {
+                @include phones {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.featured {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1264px;
+
+    h2 {
+        margin: 40px 0 30px;
+    }
+
+    &__products {
+        @include flexBox($gap: 60px, $wrap: wrap, $justifyContent: center);
+    }
+}
+
+.advantages {
+    margin: 60px auto;
+    max-width: 1264px;
+    @include flexBox($wrap: wrap, $gap: 40px, $justifyContent: center, $alignItems: stretch)
+}
+
+footer {
+
+    .footer {
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 1264px;
+
+        &__content {
+            padding: 20px;
+            
+            @include flexBox($alignItems: flex-start);
+
+            @include tablets {
+                @include flexBox($wrap: wrap, $gap: 50px, $alignItems: flex-start);
+            }
+
+            img {
+                width: 200px;
+            }
+
+            &--nav {
+
+                h2 {
+                    font-size: convertPx(26);
+                }
+                
+                nav {
+                    margin: 20px 0;
+                    @include flexBox($direction: column, $gap: 20px, $alignItems: flex-start);
+
+                    a {
+                        color: $secondaryFontColor;
+                    }
+                }
+            }
+        }
+
+        &__copy {
+            padding: 20px;
+            @include flexBox;
+
+            &--social {
+                @include flexBox($gap: 30px);
+
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
+}

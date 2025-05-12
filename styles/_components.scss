@@ -1,0 +1,121 @@
+.primary-btn {
+    @include button ($emphasis, $primaryBg, 1px solid $emphasis);
+    &:hover {
+        @include button ($primaryBg, $emphasis, 1px solid $emphasis);
+    }
+}
+
+.secondary-btn {
+    @include button ($primaryBg, $emphasis, none);
+    &:hover {
+        @include button ($emphasis, $primaryBg, 1px solid $emphasis);
+    }
+}
+
+.disabled-btn {
+    @include button ($borderColor, $secondaryFontColor, none);
+}
+
+
+.banner {
+    padding: 20px;
+    background: $secondaryBg;
+
+    &__content {
+        margin: 0 auto;
+        max-width: 1264px;
+        @include flexBox;
+
+        &--caption {
+            width: 50%;
+
+            p {
+                margin: 20px 0;
+                @include fontConfig (38, 400, $secondaryFontColor);
+
+                @include tablets {
+                    @include fontConfig (30, 400, $secondaryFontColor);
+                }
+
+                @include smallTablets {
+                    @include fontConfig (20, 400, $secondaryFontColor);
+                }
+            }
+        }
+
+        &--img {
+            width: 50%;
+
+            img {
+                width: 500px;
+                display: block;
+                margin: 0 auto;
+
+                @include tablets {
+                    width: 400px;
+                }
+
+                @include smallTablets {
+                    width: 250px;
+                }
+
+                @include phones {
+                    width: 180px;
+                }
+            }
+        }
+    }
+}
+
+.product__single {
+    width: 200px;
+    @include phones {
+        width: 170px;
+    }
+
+    &--img {
+        padding: 20px;
+        width: 100%;
+        height: 200px;
+        background: $bgAlternate;
+        border-radius: 10px;
+        @include flexBox($justifyContent: center, $alignItems: center)
+    }
+
+    h3 {
+        margin: 20px 0 10px;
+    }
+
+    &--group {
+        @include flexBox();
+    
+        strong {
+            font-size: convertPx(20);
+            font-weight: 400;
+        }
+
+        .img-btn {
+            @include imgButton(38px, 38px);
+        
+            &:hover {
+                background: $bgAlternate;
+            }
+        }
+    }
+}
+
+.service__card {
+    padding: 40px 20px;
+    width: 300px;
+    background: $bgAlternate;
+    border-radius: 10px;
+    @include flexBox($justifyContent: flex-start, $alignItems: flex-start);
+
+    h3 {
+        margin-bottom: 10px;
+    }
+    
+    img {
+        width: 50px;
+    }
+}
