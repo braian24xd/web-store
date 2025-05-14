@@ -1,5 +1,6 @@
 .primary-btn {
     @include button ($emphasis, $primaryBg, 1px solid $emphasis);
+
     &:hover {
         @include button ($primaryBg, $emphasis, 1px solid $emphasis);
     }
@@ -7,6 +8,7 @@
 
 .secondary-btn {
     @include button ($primaryBg, $emphasis, none);
+
     &:hover {
         @include button ($emphasis, $primaryBg, 1px solid $emphasis);
     }
@@ -14,6 +16,19 @@
 
 .disabled-btn {
     @include button ($borderColor, $secondaryFontColor, none);
+}
+
+.badge {
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+    background: $emphasisLight;
+    border-radius: 50%;
+    // position: absolute;
+    // top: 7px;
+    // right: 55px;
+    @include fontConfig(14, 600, $secondaryBg);
+    @include flexBox($justifyContent: center)
 }
 
 .sidebar {
@@ -42,7 +57,7 @@
 
         .img-btn {
             @include imgButton(40px, 40px);
-            
+
         }
     }
 
@@ -57,6 +72,82 @@
 
     &.open {
         left: 0;
+    }
+}
+
+.cart {
+    padding: 20px;
+    width: 400px;
+    height: 100vh;
+    background: $primaryBg;
+    box-shadow: 0 1px 3px $secondaryFontColor;
+    position: fixed;
+    top: 85px;
+    right: -800px;
+    z-index: 1;
+    transition: all 300ms ease;
+    @include phones {
+        width: 100vw;    
+    }
+
+    &__header {
+        margin-bottom: 20px;
+
+        h2 {
+            @include fontConfig(20, 500, $secondaryFontColor);
+        }
+    }
+
+    &__body {
+
+        &--items {
+            
+            div {
+                position: absolute;
+                top: 40%;
+                right: 15%;
+                @include phones {
+                    right: 20%;
+                }
+
+                @include smallPhones {
+                    right: 15%;
+                }
+
+                @include flexBox($direction: column, $justifyContent: center);
+                
+                h3 {
+                    @include fontConfig(16, 400, $secondaryFontColor);
+                }
+
+                p {
+                    @include fontConfig(14, 400, $secondaryFontColor);
+                }
+            }
+        }
+    }
+
+    &.open {
+        right: 0;
+    }
+}
+
+.cart__item {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $borderColor;
+    @include flexBox;
+
+    &--img {
+        width: 50px;
+    }
+
+    &--name {
+        @include fontConfig(16, 400, $secondaryFontColor);
+    }
+
+    .img-btn {
+        @include imgButton(30px, 30px);
     }
 }
 
@@ -112,6 +203,7 @@
 
 .product__single {
     width: 200px;
+
     @include phones {
         width: 170px;
     }
@@ -131,7 +223,7 @@
 
     &--group {
         @include flexBox();
-    
+
         strong {
             font-size: convertPx(20);
             font-weight: 400;
@@ -139,7 +231,7 @@
 
         .img-btn {
             @include imgButton(38px, 38px);
-        
+
             &:hover {
                 background: $bgAlternate;
             }
@@ -157,7 +249,7 @@
     h3 {
         margin-bottom: 10px;
     }
-    
+
     img {
         width: 50px;
     }
